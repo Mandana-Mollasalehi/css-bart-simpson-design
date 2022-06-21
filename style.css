@@ -1,0 +1,224 @@
+.bart {
+  width: 400px;
+  height: 600px;
+  position: relative;
+  margin: 0 auto;
+}
+.face {
+  width: 300px;
+  height: 420px;
+  background: #fed41d;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  top: 20%;
+  border-radius: 36% 109% 226% 74% / 98% 11% 34% 20%;
+  border: 2px solid;
+}
+
+.forehead {
+  width: 100%;
+  height: 40px;
+  background: #fed41d;
+  position: absolute;
+  top: 48px;
+  border-left: 2px solid;
+  box-sizing: border-box;
+}
+
+.hair-wrapper {
+  width: 100%;
+  height: 50px;
+  background: #ffffff;
+  position: absolute;
+  right: 0;
+  top: -3px;
+  left: 0;
+  border: 2px solid #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hair {
+  width: 24px;
+  height: 24px;
+  background: #fed41d;
+  transform: rotate(-44deg);
+  position: relative;
+  top: 24px;
+  border: 2px solid;
+}
+
+.eyes-wrapper {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  left: 0;
+  top: 35%;
+}
+/* TODO: use this for hover effect */
+/* .eyes-wrapper:hover > .eye-box > .eyelid {
+  height: 50%;
+} */
+.eye-box {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  perspective: 200px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+.eye-box + .eye-box {
+  right: 92px;
+}
+.eye-box:first-child {
+  z-index: 2;
+}
+.eye {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  border: 2px solid;
+  aspect-ratio: 1;
+}
+.eye::after {
+  content: "";
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #000;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 30%;
+  transform: translateY(-50%);
+}
+.eye:last-child::after {
+  right: 45%;
+}
+.eyelid {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  overflow: hidden;
+  background-color: #eacb40;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  z-index: 1;
+  /* transition: all 0.8s ease-out; */
+  animation: blink 1s infinite ease-out alternate;
+}
+.eyelid.top {
+  transform-origin: top;
+  border-radius: 50% 50% 0 0;
+}
+.eyelid.bottom {
+  transform-origin: bottom;
+  border-radius: 0 0 50% 50%;
+  bottom: 0;
+}
+
+.nose {
+  border-radius: 14% 86% 9% 91% / 38% 46% 54% 62%;
+  width: 170px;
+  height: 65px;
+  top: 64%;
+  position: absolute;
+  z-index: 1;
+  left: -3%;
+  border: 2px solid;
+  background: #fed41d;
+}
+.nose::after {
+  content: "";
+  width: 115px;
+  height: 89px;
+  background: #fed41d;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  right: -7px;
+}
+
+.mouth {
+  width: 175px;
+  height: 45px;
+  background: #fed41d;
+  position: absolute;
+  bottom: -4%;
+  right: -6px;
+  border-radius: 0% 126% 16% 84% / 37% 0% 101% 63%;
+  transform: rotateY(180deg) rotateZ(8deg);
+  border: 2px solid;
+  z-index: -1;
+}
+
+.hole1 {
+  position: absolute;
+  width: 118px;
+  height: 60px;
+  background: #fed41d;
+  border-radius: 32% 68% 0% 100% / 50% 0% 100% 50%;
+  bottom: 0%;
+  right: -1px;
+  transform: rotateZ(-2deg);
+}
+
+.ear {
+  position: absolute;
+  right: -40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fed41d;
+  top: 78%;
+  border: 2px solid;
+}
+.ear::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fed41d;
+  display: block;
+  position: absolute;
+  right: 45%;
+}
+
+.neck {
+  position: absolute;
+  background: #fed41d;
+  width: 121px;
+  height: 100px;
+  border-radius: 0% 100% 11% 89% / 90% 0% 100% 10%;
+  right: 0;
+  border: 2px solid;
+  bottom: -30px;
+  left: 0;
+  margin: 0 auto;
+  transform: translateX(74%);
+}
+.neck::before {
+  content: "";
+  position: absolute;
+  width: 122px;
+  height: 39px;
+  background: #fed41d;
+  top: -6px;
+  right: 1px;
+}
+
+@keyframes blink {
+  to {
+    height: 50%;
+  }
+}
